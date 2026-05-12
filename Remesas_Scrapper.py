@@ -9,7 +9,7 @@ from azure.storage.blob import BlobServiceClient
 BUSCAR = "remesas familiares"
 AZURE_CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 CONTAINER_NAME = "cabidataanalyticsdev"
-BLOB_FOLDER = "Data_Bases_Documents/Weekly"
+BLOB_FOLDER    = "Data Bases - Documents/Monthly/Remesas SV"
 # =================================================
 
 
