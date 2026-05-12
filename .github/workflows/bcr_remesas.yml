@@ -2,7 +2,7 @@ name: BCR Remesas - Descarga y Sube a Blob
 
 on:
   schedule:
-    - cron: '0 14 * * 5'   # Viernes 8:00 AM Guatemala (UTC-6)
+    - cron: '30 15 25 * *'   # Viernes 8:00 AM Guatemala (UTC-6)
   workflow_dispatch:         # Ejecución manual desde la UI de GitHub
 
 jobs:
