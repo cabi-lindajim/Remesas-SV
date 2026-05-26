@@ -25,13 +25,14 @@ def get_recency_score(nombre: str):
         'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
         'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
     ]
-    meses_encontrados = sum(1 for mes in meses if mes in texto)
-    score += meses_encontrados * 200
 
-    for i, mes in enumerate(meses):
-        if mes in texto:
-            score += (12 - i) * 50
-            break
+    meses_encontrados = [(i, mes) for i, mes in enumerate(meses) if mes in texto]
+    score += len(meses_encontrados) * 200
+
+    if meses_encontrados:
+        # Usar el ÚLTIMO mes mencionado (el más reciente del rango)
+        ultimo_indice, _ = meses_encontrados[-1]
+        score += (ultimo_indice + 1) * 50  # enero=50, feb=100, ..., dic=600
 
     if "enero" in texto and ("-" in texto or "hasta" in texto):
         score += 150
